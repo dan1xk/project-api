@@ -4,8 +4,8 @@ import UserController from "../controllers/authController";
 export default class UserRoutes {
   init() {
     const routes = Router();
-    routes.get("/user", new UserController().store);
-
+    const controller = new UserController();
+    routes.post("/user", controller.store);
     return routes;
   }
 }
