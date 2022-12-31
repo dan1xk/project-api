@@ -5,7 +5,7 @@ export default class UserRoutes {
   init() {
     const routes = Router();
     const controller = new UserController();
-    routes.post("/user", controller.store);
+    routes.post("/register", controller.store);
     return routes;
   }
 }
