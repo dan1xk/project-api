@@ -1,11 +1,12 @@
-import { Router, Request, Response } from "express";
-import UserController from "../controllers/authController";
+import { Router } from "express";
+import UserController from "../controllers/userController";
 
 export default class UserRoutes {
   init() {
-    const routes = Router();
+    const route = Router();
     const controller = new UserController();
-    routes.post("/register", controller.store);
-    return routes;
+    route.post("/register", controller.createUser);
+    route.post("/login", controller.authUser);
+    return route;
   }
 }
